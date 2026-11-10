@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#102b32">
+  <title>PonyBuy spreadsheet | Produktlänkar, storlekar och QC-bilder</title>
+  <meta name="description" content="Svensk guide till PonyBuy spreadsheet. Hitta kategorier hos CAFANS och lär dig jämföra produktlänkar, storleksmått, QC-bilder och frakt före köp.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:title" content="PonyBuy spreadsheet | Produktlänkar, storlekar och QC-bilder">
+  <meta property="og:description" content="En svensk köpguide med tio CAFANS-kategorier och praktiska råd om länkar, passform, kvalitetsbilder och frakt.">
+  <meta property="og:image" content="https://static.nike.com/a/images/f_auto,q_75,w_900/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+FORCE+1+%2707.png">
+  <meta property="og:image:alt" content="Vit Nike Air Force 1 ’07 sedd från sidan">
+  <link rel="preconnect" href="https://static.nike.com">
+  <link rel="icon" type="image/webp" sizes="24x24" href="data:image/webp;base64,UklGRnYBAABXRUJQVlA4IGoBAADQCACdASoYABgAPlEijESjoiEUBqg4BQSgCsMoRwJ9LkBggHrd2SR/vX0FSmtsHME847+70VQ7ON3fnrQlIf1ND323HW5bbI6EyW8fFNwAAP774Kz2DbiuZRyq9/ALqlPYx8zH+IdJZ3GyaXaCqAHSdZC3wxsZiEIfFGxrsv5+dcJY2h3wSY01vtH6NVTphkRQ2Z6Iio5vPvQEhW7u6EeGQiTDX+mr8FIy1r4IUj5N5R3BkYbsHGOn5/Va/3ORrdC8gtTtnaa/8/j5H7gY+Os3YohJ6C6PQJVjU2xSa2Txd+Z0cZD5snnNVeTumWgLH3IM7HmQl+MxEpfdAtXFAZKBoDb1yL4+aV4+e8NIuPK+v2L6Y/sqyue89ecrf4C4YMlu6qgdjtlxjaedALJiH1Vm0f6MY+yevvh3v9P5S5yxs6HmDeQzkBgmpqnCvdcvB0CG3345g22p+Rh4BuGlRJsdlvfTYUWr4C8wAA==">
+  <style>
+    :root { color-scheme: light; --ink:#102b32; --muted:#40575c; --paper:#edf4f2; --card:#fff; --line:#b8cdc9; --accent:#ffd093; --mint:#ccebe2; }
+    *,*::before,*::after { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:1rem/1.65 system-ui,sans-serif; }
+    h1,h2,h3,p,figure { margin:0; }
+    h1,h2,h3 { line-height:1.12; text-wrap:balance; }
+    h1 { max-width:12ch; font-size:clamp(2.65rem,6.9vw,5.75rem); letter-spacing:-.075em; overflow-wrap:anywhere; }
+    h2 { font-size:clamp(1.65rem,4.1vw,2.55rem); letter-spacing:-.045em; }
+    h3 { font-size:1.2rem; }
+    a { color:inherit; text-underline-offset:.2em; }
+    :focus-visible { outline:3px solid #ad4d1c; outline-offset:4px; }
+    .wrap { width:min(72rem,calc(100% - 2rem)); margin-inline:auto; }
+    .top { background:var(--ink); color:#fff; }
+    .bar,.foot { display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap; padding-block:.8rem; }
+    .brand { font-weight:800; }
+    .pill { background:var(--accent); color:var(--ink); display:inline-flex; align-items:center; min-height:44px; padding:.45rem .9rem; border-radius:.35rem; font-weight:750; text-decoration:none; }
+    .pill:hover { text-decoration:underline; }
+    .hero { display:grid; grid-template-columns:1.12fr 1fr; gap:clamp(1rem,4vw,4rem); align-items:center; padding-block:clamp(1.5rem,4vw,3rem); }
+    .eyebrow { font-size:.79rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.55rem; }
+    .intro { max-width:55ch; margin-top:1rem; color:var(--muted); }
+    .hero-image { overflow:hidden; border:1px solid var(--line); border-radius:.65rem; background:#fff; }
+    img { display:block; width:100%; height:auto; }
+    .hero-image img { aspect-ratio:16/9; object-fit:cover; object-position:center 60%; background:#eef0ef; }
+    figcaption { font-size:.88rem; padding:.6rem .8rem; }
+    .section { margin-bottom:clamp(2rem,5vw,4rem); }
+    .section > p { margin-top:.55rem; color:var(--muted); }
+    .categories,.gallery,.guides,.checks { display:grid; gap:.65rem; padding:0; margin:1rem 0 0; }
+    .categories,.checks { list-style:none; }
+    .categories { grid-template-columns:repeat(5,minmax(0,1fr)); }
+    .categories a { display:flex; min-height:54px; height:100%; align-items:center; gap:.55rem; padding:.65rem .75rem; border:1px solid var(--line); border-radius:.4rem; background:var(--card); font-weight:720; text-decoration:none; line-height:1.25; }
+    .categories a:hover { background:var(--mint); text-decoration:underline; }
+    .categories span { color:var(--muted); font-size:.73rem; font-variant-numeric:tabular-nums; }
+    .checks { grid-template-columns:repeat(3,minmax(0,1fr)); counter-reset:checkpoint; }
+    .checks li { counter-increment:checkpoint; background:var(--mint); border-top:3px solid #346862; padding:1rem; }
+    .checks h3::before { content:"0" counter(checkpoint) " "; font-size:.75em; color:#365955; }
+    .checks p,.guides p { margin-top:.55rem; }
+    .gallery { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .gallery figure,.guides article { border:1px solid var(--line); border-radius:.5rem; background:var(--card); overflow:hidden; }
+    .gallery img { aspect-ratio:1; object-fit:cover; background:#e8eceb; }
+    .guides { grid-template-columns:1fr 1fr; }
+    .guides article { padding:clamp(1rem,3vw,1.65rem); }
+    .guides .eyebrow { color:var(--muted); }
+    .faq { max-width:53rem; }
+    .faq h2 { margin-bottom:1rem; }
+    details { border-top:1px solid var(--line); }
+    details:last-child { border-bottom:1px solid var(--line); }
+    summary { padding:.85rem .2rem; font-weight:750; cursor:pointer; }
+    details p { padding:0 .2rem .9rem; max-width:72ch; }
+    footer { background:var(--ink); color:#fff; }
+    @media (max-width:48rem) {
+      .hero,.guides { grid-template-columns:1fr; }
+      .categories,.gallery { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .checks { grid-template-columns:1fr; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebPage",
+        "name":"PonyBuy spreadsheet | Produktlänkar, storlekar och QC-bilder",
+        "description":"Svensk guide till PonyBuy spreadsheet. Hitta kategorier hos CAFANS och lär dig jämföra produktlänkar, storleksmått, QC-bilder och frakt före köp.",
+        "inLanguage":"sv",
+        "hasPart":[{"@id":"#matt-och-qc"},{"@id":"#fraktkalkyl"},{"@id":"#fragor"}]
+      },
+      {
+        "@type":"Article",
+        "@id":"#matt-och-qc",
+        "headline":"Storlekar och QC-bilder före köp",
+        "inLanguage":"sv"
+      },
+      {
+        "@type":"Article",
+        "@id":"#fraktkalkyl",
+        "headline":"Från varupris till fraktkalkyl",
+        "inLanguage":"sv"
+      },
+      {
+        "@type":"FAQPage",
+        "@id":"#fragor",
+        "name":"Vanliga frågor om PonyBuy spreadsheet",
+        "inLanguage":"sv",
+        "mainEntity":[
+          {"@type":"Question","name":"Vad är ett PonyBuy spreadsheet?","acceptedAnswer":{"@type":"Answer","text":"Det är en produktlista som samlar länkar och ibland även referensbilder, mått eller prisuppgifter. Använd den som en startpunkt och kontrollera den valda varianten på produktsidan."}},
+          {"@type":"Question","name":"Vart leder produktkategorierna?","acceptedAnswer":{"@type":"Answer","text":"Alla tio kategorier leder till respektive avdelning hos CAFANS. Guiden är fristående från PonyBuy och varumärkena som visas på bilderna."}},
+          {"@type":"Question","name":"Hur vet jag om en produktlänk är aktuell?","acceptedAnswer":{"@type":"Answer","text":"Öppna länken och kontrollera att produktsidan visar rätt modell, färg och storlek. Om varianten har försvunnit behöver du en aktuell länk eller en ny bekräftelse innan du beställer."}},
+          {"@type":"Question","name":"Vad kan jag se på en QC-bild?","acceptedAnswer":{"@type":"Answer","text":"En QC-bild är ett kvalitetsfoto som kan visa färg, sömmar, skick och ibland ett mått. Be om en bild på just din variant om detaljerna är viktiga. Äkthet kräver separat verifiering."}},
+          {"@type":"Question","name":"Hur jämför jag total kostnad till Sverige?","acceptedAnswer":{"@type":"Answer","text":"Räkna ihop varupris, eventuell inrikesfrakt, serviceavgifter, internationell frakt och eventuella importkostnader. Kontrollera debiteringsvaluta och vad som ingår i leveransalternativet."}}
+        ]
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/iwecu/">
+</head>
+<body>
+  <!-- Bing gav inga träffar för den exakta sökfrasen vid kontrollen. Innehållsanalysen bygger på tio relevanta webbplatser från annan offentlig webbsökning. -->
+  <header class="top">
+    <div class="wrap bar">
+      <a class="brand" href="https://www.cafans.com">www.cafans.com</a>
+      <a class="pill" href="https://www.cafans.com">Öppna CAFANS <span aria-hidden="true">&nbsp;↗</span></a>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="sidrubrik">
+      <div>
+        <p class="eyebrow">Svensk köpguide · Kläder och accessoarer</p>
+        <h1 id="sidrubrik">PonyBuy spreadsheet</h1>
+        <p class="intro">Ett PonyBuy spreadsheet är en samling produktlänkar för den som vill hitta och jämföra varor. Börja med en kategori hos CAFANS. Använd sedan guiden för att kontrollera länken, passformen, QC-bilderna och den beräknade frakten innan du väljer.</p>
+      </div>
+      <figure class="hero-image">
+        <img src="https://static.nike.com/a/images/f_auto,q_75,w_900/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+FORCE+1+%2707.png"
+          srcset="https://static.nike.com/a/images/f_auto,q_75,w_480/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+FORCE+1+%2707.png 480w, https://static.nike.com/a/images/f_auto,q_75,w_900/u_9ddf04c7-2a9a-4d76-add1-d15af8f0263d,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b7d9211c-26e7-431a-ac24-b0540fb3c00f/AIR+FORCE+1+%2707.png 900w"
+          sizes="(max-width: 48rem) calc(100vw - 2rem), (max-width: 74rem) 45vw, 33rem"
+          width="900" height="1125" loading="eager" fetchpriority="high" alt="Vit Nike Air Force 1 ’07 sedd från sidan">
+        <figcaption>Bildreferens · Nike Air Force 1 ’07</figcaption>
+      </figure>
+    </section>
+
+    <nav class="section" aria-labelledby="kategorirubrik">
+      <h2 id="kategorirubrik">Hitta rätt produktkategori</h2>
+      <p>Välj avdelning i CAFANS produktkatalog.</p>
+      <ul class="categories">
+        <li><a href="https://cafans.com/category-911-Shoes.html"><span aria-hidden="true">01</span> Skor</a></li>
+        <li><a href="https://cafans.com/category-912-Hoodies%2FSweaters.html"><span aria-hidden="true">02</span> Huvtröjor och tröjor</a></li>
+        <li><a href="https://cafans.com/category-913-T-Shirts.html"><span aria-hidden="true">03</span> T-shirts</a></li>
+        <li><a href="https://cafans.com/category-914-Jackets.html"><span aria-hidden="true">04</span> Jackor</a></li>
+        <li><a href="https://cafans.com/category-915-Pants%2FShorts.html"><span aria-hidden="true">05</span> Byxor och shorts</a></li>
+        <li><a href="https://cafans.com/category-916-Headwear.html"><span aria-hidden="true">06</span> Huvudbonader</a></li>
+        <li><a href="https://cafans.com/category-917-Sets.html"><span aria-hidden="true">07</span> Klädset</a></li>
+        <li><a href="https://cafans.com/category-918-underwear%2Funderpants.html"><span aria-hidden="true">08</span> Underkläder</a></li>
+        <li><a href="https://cafans.com/category-919-Jersey.html"><span aria-hidden="true">09</span> Matchtröjor</a></li>
+        <li><a href="https://cafans.com/category-920-Accessories.html"><span aria-hidden="true">10</span> Accessoarer</a></li>
+      </ul>
+    </nav>
+
+    <section class="section" aria-labelledby="kontroll">
+      <h2 id="kontroll">Tre kontroller innan du väljer</h2>
+      <ol class="checks">
+        <li><h3>Rätt produktlänk</h3><p>Jämför modellbeteckning, färgkod och säljarens bilder. Kontrollera också att rätt storlek finns för den färg du har valt.</p></li>
+        <li><h3>Rätt passform</h3><p>Jämför mått i centimeter med en sko eller ett plagg som passar dig. Skilj på innersulans längd och den fotlängd som tabellen rekommenderar.</p></li>
+        <li><h3>Rimlig totalkostnad</h3><p>Anteckna valuta, varupris, serviceavgift och uppskattad frakt. Jämför alternativen för samma destination och samma paket.</p></li>
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="bildguide">
+      <h2 id="bildguide">Bildguide för material och detaljer</h2>
+      <p>Stilreferenser för att jämföra tyg, skärmform, lås och länkar. Kontrollera separat vilka modeller och varianter som finns i katalogen.</p>
+      <div class="gallery">
+        <figure>
+          <img src="https://sg.louisvuitton.com/images/is/image/lv/1/PP_VP_M/louis-vuitton--HUA62WB7105C_PM2_Front%20view.jpg?wid=440&amp;hei=510&amp;fmt=webp" width="440" height="510" loading="lazy" decoding="async" alt="Beige Louis Vuitton-jeansjacka med monogrammönster och två framfickor">
+          <figcaption>Louis Vuitton · Monogramjacka</figcaption>
+        </figure>
+        <figure>
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1789492532/A00CSP_4HBL0_1066_001_100_0000_Light-gg-cotton-canvas-baseball-hat.jpg" width="490" height="490" loading="lazy" decoding="async" alt="Svart Gucci-keps med grön och röd rand på skärmen">
+          <figcaption>Gucci · Keps i GG-canvas</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.hermes.com/is/image/hermesproduct/700001F%2001_front_wm_101?wid=440&amp;hei=510&amp;fit=fit&amp;$product_default_bg$&amp;fmt=webp" width="440" height="510" loading="lazy" decoding="async" alt="Svart Hermès Clic H-armband med guldfärgat H-format lås">
+          <figcaption>Hermès · Clic H-armband</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.christiandior.com/is/image/diorprod/B2522WOMCYD03S_SBG_E01-2?$r9x10_raw$&amp;crop=0,0,4000,5000&amp;wid=440&amp;hei=490&amp;scale=1&amp;fmt=webp" width="440" height="490" loading="lazy" decoding="async" alt="Guldfärgat Dior Petit CD-kedjearmband med CD-detalj och kristaller">
+          <figcaption>Dior · Petit CD-armband</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="artiklar">
+      <h2 id="artiklar">Köpguider för mått, bilder och frakt</h2>
+      <div class="guides">
+        <article id="matt-och-qc">
+          <p class="eyebrow">01 / Mått och kvalitetskontroll</p>
+          <h3>Storlekar och QC-bilder före köp</h3>
+          <p>När du jämför produktlänkar från ett PonyBuy spreadsheet, öppna storlekstabellen för just den variant du tittar på. För sneakers kan du jämföra innersulans längd och skons bredd. För en jacka eller huvtröja är bröstvidd, axelbredd och ärmlängd ofta mer användbara än storleksbokstaven. För ett armband, jämför dess invändiga omkrets med handledsmåttet.</p>
+          <p>Be om en QC-bild med måttband om ett mått avgör valet. Kontrollera att fotot gäller den valda färgen och storleken. En närbild av sömmar, dragkedja eller lås gör det lättare att bedöma finishen. Om färgen verkar avvika, jämför foton tagna i liknande ljus.</p>
+        </article>
+        <article id="fraktkalkyl">
+          <p class="eyebrow">02 / Leverans och budget</p>
+          <h3>Från varupris till fraktkalkyl</h3>
+          <p>En prisuppgift i en produktlista är en ögonblicksbild. Spara produktlänken, säljarnamnet, den valda varianten och datumet för jämförelsen. Kontrollera därefter varupris, inrikesfrakt och eventuell serviceavgift på nytt.</p>
+          <p>För internationell frakt, jämför paketets vikt och mått, spårning och uppskattad leveranstid. En skokartong kan öka volymvikten om fraktalternativet räknar efter mått. Vid frakt till Sverige, kontrollera även vilka avgifter som ingår och vad som eventuellt tillkommer vid leverans.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section faq" id="fragor" aria-labelledby="faq-rubrik">
+      <h2 id="faq-rubrik">Vanliga frågor om PonyBuy spreadsheet</h2>
+      <details open>
+        <summary>Vad är ett PonyBuy spreadsheet?</summary>
+        <p>Det är en produktlista som samlar länkar och ibland även referensbilder, mått eller prisuppgifter. Använd den som en startpunkt och kontrollera den valda varianten på produktsidan.</p>
+      </details>
+      <details>
+        <summary>Vart leder produktkategorierna?</summary>
+        <p>Alla tio kategorier leder till respektive avdelning hos CAFANS. Guiden är fristående från PonyBuy och varumärkena som visas på bilderna.</p>
+      </details>
+      <details>
+        <summary>Hur vet jag om en produktlänk är aktuell?</summary>
+        <p>Öppna länken och kontrollera att produktsidan visar rätt modell, färg och storlek. Om varianten har försvunnit behöver du en aktuell länk eller en ny bekräftelse innan du beställer.</p>
+      </details>
+      <details>
+        <summary>Vad kan jag se på en QC-bild?</summary>
+        <p>En QC-bild är ett kvalitetsfoto som kan visa färg, sömmar, skick och ibland ett mått. Be om en bild på just din variant om detaljerna är viktiga. Äkthet kräver separat verifiering.</p>
+      </details>
+      <details>
+        <summary>Hur jämför jag total kostnad till Sverige?</summary>
+        <p>Räkna ihop varupris, eventuell inrikesfrakt, serviceavgifter, internationell frakt och eventuella importkostnader. Kontrollera debiteringsvaluta och vad som ingår i leveransalternativet.</p>
+      </details>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap foot">
+      <p>Fristående svensk produkt- och köpguide.</p>
+      <a class="pill" href="https://www.cafans.com">Besök CAFANS <span aria-hidden="true">&nbsp;↗</span></a>
+    </div>
+  </footer>
+</body>
+</html>
